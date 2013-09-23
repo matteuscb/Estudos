@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report9" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5a3471d3-15c7-4179-a440-cbf24a8eb6e0">
+    <property name="ireport.zoom" value="1.0"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>
+    <queryString language="SQL">
+		<![CDATA[select cli_nome,cli_pessoa,cli_cpf_cnpj,cli_telefone1,cli_celular1,cli_rua || ' ' || cli_numero || ', ' || cli_bairro || ' - ' || cli_cidade as ENDERECO, ven_produto,ven_valor_produto,to_char(ven_data,'dd/mm/yyyy'),ven_valor_total,ven_qnt_produto from venda inner join cliente on venda.ven_cliente = cliente.cli_codigo where cli_codigo = 4 and ven_codigo = 11]]>
+    </queryString>
+    <field name="cli_nome" class="java.lang.String"/>
+    <field name="cli_pessoa" class="java.lang.String"/>
+    <field name="cli_cpf_cnpj" class="java.lang.String"/>
+    <field name="cli_telefone1" class="java.lang.String"/>
+    <field name="cli_celular1" class="java.lang.String"/>
+    <field name="endereco" class="java.lang.String"/>
+    <field name="ven_produto" class="java.lang.String"/>
+    <field name="ven_valor_produto" class="java.math.BigDecimal"/>
+    <field name="to_char" class="java.lang.String"/>
+    <field name="ven_valor_total" class="java.math.BigDecimal"/>
+    <field name="ven_qnt_produto" class="java.lang.Integer"/>
+    <background>
+        <band/>
+    </background>
+    <title>
+        <band height="180">
+            <staticText>
+                <reportElement uuid="a3721c18-d348-4b48-afa8-51bed64ff31f" x="184" y="0" width="191" height="43" forecolor="#000000"/>
+                <textElement>
+                    <font size="34" isBold="true"/>
+                </textElement>
+                <text><![CDATA[ROMANEIO]]>
+                </text>
+            </staticText>
+            <staticText>
+                <reportElement uuid="84445561-d971-4396-a448-b40db0c22a9e" mode="Opaque" x="0" y="56" width="50" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+                <textElement textAlignment="Left">
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Nome:]]>
+                </text>
+            </staticText>
+            <staticText>
+                <reportElement uuid="8bae2faf-f225-4cda-aa1e-832dfeef529c" mode="Opaque" x="0" y="76" width="68" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+                <textElement textAlignment="Left">
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Pessoa:]]>
+                </text>
+            </staticText>
+            <staticText>
+                <reportElement uuid="d3153f2a-5815-4f70-8a8d-f74b10b7c088" mode="Opaque" x="0" y="96" width="86" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+                <textElement textAlignment="Left">
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <text><![CDATA[CPF - CNPJ:]]>
+                </text>
+            </staticText>
+            <staticText>
+                <reportElement uuid="c19976f3-6b0b-401c-b5ab-679629cbae6e" mode="Opaque" x="0" y="116" width="68" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+                <textElement textAlignment="Left">
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Telefone:]]>
+                </text>
+            </staticText>
+            <staticText>
+                <reportElement uuid="46b485dd-f0be-46f3-abf5-c9f416040cfd" mode="Opaque" x="184" y="116" width="58" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+                <textElement textAlignment="Left">
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Celular:]]>
+                </text>
+            </staticText>
+            <staticText>
+                <reportElement uuid="66eb4275-0978-41fb-b482-19eae1bc1d48" mode="Opaque" x="0" y="136" width="86" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+                <textElement textAlignment="Left">
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Endereço:]]>
+                </text>
+            </staticText>
+            <textField isStretchWithOverflow="true">
+                <reportElement uuid="d1c3b7df-2083-41f4-a7de-41aad31528cc" x="50" y="56" width="314" height="20"/>
+                <textElement>
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{cli_nome}]]>
+                </textFieldExpression>
+            </textField>
+            <textField isStretchWithOverflow="true">
+                <reportElement uuid="85ff715d-c6cf-4ddb-945d-6ee10a08881e" x="68" y="76" width="146" height="20"/>
+                <textElement>
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{cli_pessoa}]]>
+                </textFieldExpression>
+            </textField>
+            <textField isStretchWithOverflow="true">
+                <reportElement uuid="6dce6d04-010d-4fe2-b05f-3a7861bdf21a" x="86" y="96" width="146" height="20"/>
+                <textElement>
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{cli_cpf_cnpj}]]>
+                </textFieldExpression>
+            </textField>
+            <textField isStretchWithOverflow="true">
+                <reportElement uuid="8b100060-3a91-4b8c-aa24-58ee0387de1e" x="70" y="116" width="114" height="20"/>
+                <textElement>
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{cli_telefone1}]]>
+                </textFieldExpression>
+            </textField>
+            <textField isStretchWithOverflow="true">
+                <reportElement uuid="140b0126-02fc-4572-a87d-73563fb3f4be" x="242" y="116" width="108" height="20"/>
+                <textElement>
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{cli_celular1}]]>
+                </textFieldExpression>
+            </textField>
+            <textField isStretchWithOverflow="true">
+                <reportElement uuid="61192dd8-b5d7-4777-a735-fe2fac240ded" x="73" y="136" width="438" height="20"/>
+                <textElement>
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{endereco}]]>
+                </textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement uuid="6a25a3ce-848b-46d9-9d23-5711bd6048da" mode="Opaque" x="0" y="156" width="114" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+                <textElement textAlignment="Left">
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Data da venda:]]>
+                </text>
+            </staticText>
+            <textField isStretchWithOverflow="true">
+                <reportElement uuid="ac39a2c3-ffb4-4f87-8e9c-a29f0df8bf81" x="108" y="156" width="134" height="20"/>
+                <textElement>
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{to_char}]]>
+                </textFieldExpression>
+            </textField>
+        </band>
+    </title>
+    <pageHeader>
+        <band height="16"/>
+    </pageHeader>
+    <columnHeader>
+        <band height="21">
+            <line>
+                <reportElement uuid="587c8a35-2c9a-4d46-9adb-0b9f47fabff9" x="-20" y="20" width="595" height="1" forecolor="#666666"/>
+            </line>
+            <staticText>
+                <reportElement uuid="0b37b194-fb6a-41ab-b222-e40b9bd16397" mode="Opaque" x="0" y="0" width="86" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+                <textElement textAlignment="Center">
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Produto:]]>
+                </text>
+            </staticText>
+            <staticText>
+                <reportElement uuid="ce2aae16-4098-471a-99f5-7bc4ebccaf43" mode="Opaque" x="239" y="0" width="50" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+                <textElement textAlignment="Center">
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Valor:]]>
+                </text>
+            </staticText>
+            <staticText>
+                <reportElement uuid="80bad3b4-aa65-4b71-8792-f0eb0bcd8954" mode="Opaque" x="438" y="0" width="90" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+                <textElement textAlignment="Center">
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Quantidade:]]>
+                </text>
+            </staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="21">
+            <line>
+                <reportElement uuid="97cf2460-20c8-4bb3-8a4c-5d12daf0301c" positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1"/>
+            </line>
+            <textField isStretchWithOverflow="true">
+                <reportElement uuid="2749065f-60b0-4718-b343-62234af00fb9" x="225" y="0" width="88" height="20"/>
+                <textElement textAlignment="Center">
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ven_valor_produto}]]>
+                </textFieldExpression>
+            </textField>
+            <textField isStretchWithOverflow="true">
+                <reportElement uuid="94bdf78b-d0a1-4814-a1cf-ad6dcaa00acf" x="0" y="0" width="96" height="20"/>
+                <textElement textAlignment="Center">
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ven_produto}]]>
+                </textFieldExpression>
+            </textField>
+            <textField isStretchWithOverflow="true">
+                <reportElement uuid="0a43e1f4-4fda-4b34-a50e-b9ba75e5fdf2" x="461" y="0" width="50" height="20"/>
+                <textElement textAlignment="Center">
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ven_qnt_produto}]]>
+                </textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+    <columnFooter>
+        <band/>
+    </columnFooter>
+    <pageFooter>
+        <band height="23">
+            <staticText>
+                <reportElement uuid="74d75c64-2a43-452a-982e-a9c428489e19" mode="Opaque" x="350" y="0" width="88" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+                <textElement textAlignment="Center">
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Valor Total:]]>
+                </text>
+            </staticText>
+            <textField isStretchWithOverflow="true">
+                <reportElement uuid="87cd8a41-7a55-4d00-a4ca-2510ce79abf3" x="438" y="0" width="107" height="20"/>
+                <textElement>
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{ven_valor_total}]]>
+                </textFieldExpression>
+            </textField>
+        </band>
+    </pageFooter>
+    <summary>
+        <band/>
+    </summary>
+</jasperReport>
